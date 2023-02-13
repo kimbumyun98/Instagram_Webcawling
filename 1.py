@@ -20,8 +20,8 @@ f_dir = input('이미지를 저장할 폴더(예:C:\\Users\\) : ')
 guest = input('계정 : ')
 
 # 03. 사용자 인스타 정보 설정
-login_id = 'web_crawling_guest' #input('아이디 : ')
-login_pw = '1q2w3e4r5t' #input('비밀번호 : ')
+login_id = input('아이디 : ')
+login_pw = input('비밀번호 : ')
 
 # 04. 시간 설정
 now = time.localtime()
