@@ -20,8 +20,8 @@ f_dir = input('이미지를 저장할 폴더(예:C:\\Users\\) : ')
 guest = input('계정 : ')
 
 # 03. 사용자 인스타 정보 설정
-login_id = input('아이디 : ')
-login_pw = input('비밀번호 : ')
+login_id = 'web_crawling_guest' #input('아이디 : ')
+login_pw = '1q2w3e4r5t' #input('비밀번호 : ')
 
 # 04. 시간 설정
 now = time.localtime()
@@ -68,7 +68,7 @@ while (timer<10):
 
 while True:
     dr.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    time.sleep(2)
+    time.sleep(3)
     new_height = dr.execute_script("return document.body.scrollHeight")
     if new_height == last_height:
         break
@@ -83,17 +83,14 @@ pyautogui.press('down', 7)
 # 10. 이미지 다운로드
 for image in images:
     try:
-        time.sleep(5)
         imgUrl= dr.find_elements(By.CSS_SELECTOR, "img.x5yr21d.xu96u03.x10l6tqk.x13vifvy.x87ps6o.xh8yej3")[count].get_attribute("src")
         print("다운로드 시작")
-        urllib.request.urlretrieve(imgUrl,str(count)+".jpg")
+        urllib.request.urlretrieve(imgUrl, str(count)+".jpg")
         print("다운로드 완료")
         count = count+1
 
         if count % 3 == 0:
             pyautogui.press('down', 8)
-            if count % 30 == 0:
-                pyautogui.press('down', 1)
     except:
         pass
 
